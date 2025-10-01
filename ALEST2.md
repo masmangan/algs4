@@ -117,7 +117,6 @@ java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.DepthFirstPaths algs4-d
 
 Exemplos indicados nos comentários de CC.java:
 
-
 ```
 java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.CC algs4-data/tinyG.txt
 
