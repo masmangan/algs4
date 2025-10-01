@@ -88,7 +88,8 @@ System.out.println(G.toDot());
 Copie a saída do método toDot() e utilize uma aplicação para desenhar o grafo, por exemplo, https://dreampuf.github.io/GraphvizOnline/.
 Copie e cole a saída no editor da esquerda.
 
-![alt text](image.png)
+<img width="1349" height="801" alt="image" src="https://github.com/user-attachments/assets/930d92ed-5766-4e3b-aa5f-10fd8849078d" />
+
 
 ## BreadthFirstPaths
 
