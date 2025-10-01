@@ -62,7 +62,7 @@ edu.princeton.cs.algs4.Graph.main(new String[]{"algs4-data/tinyG.txt"});
 /exit
 ```
 
-Para executar um método qualquer, basta utilizar os mesmos comandos de um programa Java, adaptando para a sintaze do jshell.
+Para executar um método qualquer, basta utilizar os mesmos comandos de um programa Java, adaptando para a sintaxe do jshell.
 
 Por exemplo, para obter uma imagem com o desenho do grafo, por meio do método toDot() da classe Graph:
 
@@ -88,7 +88,7 @@ System.out.println(G.toDot());
 Copie a saída do método toDot() e utilize uma aplicação para desenhar o grafo, por exemplo, https://dreampuf.github.io/GraphvizOnline/.
 Copie e cole a saída no editor da esquerda.
 
-<img width="1349" height="801" alt="image" src="https://github.com/user-attachments/assets/930d92ed-5766-4e3b-aa5f-10fd8849078d" />
+<img width="1349" height="801" alt="image" src="https://github.com/user-attachments/assets/e52b5845-5cdd-4822-ae0f-b86592853d17" />
 
 
 ## BreadthFirstPaths
