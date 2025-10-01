@@ -27,9 +27,9 @@ mvn package
 
 Desative a extensão do VS Code para Gradle, caso utilize o Maven.
 
-Os arquivos compilados devem estar na pasta /target, junto com um arquivo algs4-1.0.0.0.jar.
+Os arquivos compilados devem estar na pasta target, junto com um arquivo algs4-1.0.0.0.jar.
 
-Os arquivos de dados indicados no material e comentários estão na pasta /input.
+Os arquivos de dados indicados no material e comentários estão na pasta algs4-data.
 
 # Exemplos
 
@@ -40,9 +40,9 @@ Para executar um dos exemplos apresentados em aula:
 Exemplos indicados nos comentários de Graph.java:
 
 ```
-java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Graph tinyG.txt
+java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Graph algs4-data/tinyG.txt
 
-java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Graph mediumG.txt
+java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Graph algs4-data/mediumG.txt
 ```
 
 O jshell (https://docs.oracle.com/en/java/javase/21/docs/specs/man/jshell.html) pode ser utilizado para executar os exemplos.
@@ -113,8 +113,21 @@ java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Graph algs4-data/tinyCG
 
 java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.DepthFirstPaths algs4-data/tinyCG.txt 0
 ```
+## Cycle
 
-## CC.java (Connected Components)
+Exemplos indicados nos comentários de Cycle.java:
+
+```
+java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Cycle algs4-data/tinyG.txt
+
+java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Cycle algs4-data/mediumG.txt
+
+java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Cycle algs4-data/largeG.txt
+
+```
+
+
+## CC (Connected Components)
 
 Exemplos indicados nos comentários de CC.java:
 
