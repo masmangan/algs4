@@ -88,7 +88,8 @@ System.out.println(G.toDot());
 Copie a saída do método toDot() e utilize uma aplicação para desenhar o grafo, por exemplo, https://dreampuf.github.io/GraphvizOnline/.
 Copie e cole a saída no editor da esquerda.
 
-[![alt text](image.png)](https://private-user-images.githubusercontent.com/595430/496224780-930d92ed-5766-4e3b-aa5f-10fd8849078d.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTkzMzE4MjAsIm5iZiI6MTc1OTMzMTUyMCwicGF0aCI6Ii81OTU0MzAvNDk2MjI0NzgwLTkzMGQ5MmVkLTU3NjYtNGUzYi1hYTVmLTEwZmQ4ODQ5MDc4ZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMDAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTAwMVQxNTEyMDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jNGE3ZTU3YjE4OWIyZDViN2E5ZjlmNGM1MjIzYTQzM2JlZDRlMjZlNGE4NDg3N2QxYWM0NjQyNGI0NGViMzZiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Vn6FjYfRAfkt9zgLKnYakKhoPlFDgYa_CEH2pXFYDgA)
+<img width="1349" height="801" alt="image" src="https://github.com/user-attachments/assets/930d92ed-5766-4e3b-aa5f-10fd8849078d" />
+
 
 ## BreadthFirstPaths
 
