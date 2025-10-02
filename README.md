@@ -1,5 +1,5 @@
-
-# Alunos de Algoritmos e Estruturas de Dados II, consultem ALEST2.md.
+> [!TIP]
+> Alunos de Algoritmos e Estruturas de Dados II, consultem [ALEST2.md](ALEST2.md).
 
 
 ## Overview
