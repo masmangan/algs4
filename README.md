@@ -1,3 +1,7 @@
+
+# Alunos de Algoritmos e Estruturas de Dados II, consultem ALEST2.md.
+
+
 ## Overview
 
 <IMG SRC="http://algs4.cs.princeton.edu/cover.png"  align=right hspace=25 width=100 alt = "Algorithms 4/e textbook">
