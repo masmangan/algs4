@@ -61,6 +61,9 @@ java MinPQ < tinyPQ.txt
 ```
 java TopM 5 < tinyBatch.txt
 ```
+# IndexMinPQ
+# IndexMaxPQ
+
 
 ## Huffman
 ```
@@ -71,6 +74,8 @@ java Huffman - < abra.txt | java BinaryDump 60
 ```
 java QuickUnionUF tinyUF.txt
 ```
+
+
 ## Graph.java
 Exemplos indicados nos comentários de `Graph.java`:
 
