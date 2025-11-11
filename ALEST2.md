@@ -48,10 +48,19 @@ Para executar um dos exemplos apresentados em aula:
 
 # Heap
 ## Heap
+```
 java Heap < tiny.txt
- % java MaxPQ < tinyPQ.txt
-% java MinPQ < tinyPQ.txt
-% java TopM 5 < tinyBatch.txt
+```
+## Priority Queues
+```
+java MaxPQ < tinyPQ.txt
+```
+```
+java MinPQ < tinyPQ.txt
+```
+```
+java TopM 5 < tinyBatch.txt
+```
 
 ## Huffman
 java Huffman - < abra.txt | java BinaryDump 60
