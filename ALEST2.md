@@ -147,6 +147,9 @@ java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.CC algs4-data/mediumG.t
 java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.CC -Xss50m algs4-data/largeG.txt
 ```
 
+## Prim
+
+## Kruskal
 
 # Digraph
 
@@ -156,3 +159,11 @@ Exemplos indicados nos comentários de Topological.java:
 ```
 java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Topological algs4-data/jobs.txt /
 ```
+
+## Dijkstra
+
+## Floyd-Warshall
+
+## Ford-Fulkerson
+
+## Critical Path
