@@ -150,7 +150,7 @@ java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.CC -Xss50m algs4-data/l
 
 # Digraph
 
-# Topological
+## Topological
 Exemplos indicados nos comentários de Topological.java:
 
 ```
