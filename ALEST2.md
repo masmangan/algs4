@@ -38,6 +38,10 @@ Os arquivos compilados devem estar na pasta `target`. Utilizaremos o `arquivo al
 
 Os arquivos de dados indicados no material e comentários estão na pasta `algs4-data`.
 
+# Modelos
+
+Para uma visão geral das classes utilizadas nos exemplos, consulte Modelling.md.
+
 # Exemplos
 
 Para executar um dos exemplos apresentados em aula:
