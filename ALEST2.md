@@ -46,6 +46,12 @@ Para uma visão geral das classes utilizadas nos exemplos, consulte [Modelling.m
 
 Para executar um dos exemplos apresentados em aula:
 
+# Heap
+## Heap
+java Heap < tiny.txt
+
+## Huffman
+java Huffman - < abra.txt | java BinaryDump 60
 
 ## Graph.java
 Exemplos indicados nos comentários de `Graph.java`:
@@ -157,6 +163,17 @@ java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.CC -Xss50m algs4-data/l
 
 # Digraph
 
+## BreadthFirstDirectedPaths
+
+```
+java BreadthFirstDirectedPaths tinyDG.txt 3
+```
+
+## DepthFirstDirectedPaths
+```
+java DepthFirstDirectedPaths tinyDG.txt 3
+```
+
 ## Topological
 Exemplos indicados nos comentários de Topological.java:
 
@@ -164,10 +181,28 @@ Exemplos indicados nos comentários de Topological.java:
 java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.Topological algs4-data/jobs.txt /
 ```
 
-## Dijkstra
+# AdjMatrixEdgeWeightedDigraph
 
 ## Floyd-Warshall
+```
+java FloydWarshall
+```
 
-## Ford-Fulkerson
+# EdgeWeightedDigraph
+
+## Dijkstra
+```
+% java DijkstraSP tinyEWD.txt 0
+```
 
 ## Critical Path
+```
+java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.CPM < algs4-data/jobsPC.txt
+```
+
+# FlowNetwork
+
+## Ford-Fulkerson
+```
+java FordFulkerson tinyFN.txt
+```
