@@ -1,0 +1,54 @@
+@startuml
+!theme blueprint
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+
+package "edu.princeton.cs.algs4" {
+  class Graph {
+    - NEWLINE : String
+    - V : int
+    - E : int
+    - adj : Bag<Integer> []
+    + Graph(V:int)
+    + Graph(in: In)
+    + Graph(graph: Graph)
+    + V() : int
+    + E() : int
+    - validateVertex(v:int) : void
+    + addEdge(v:int, w:int) : void
+    + adj(v:int) : Iterable<Integer>
+    + degree(v:int) : int
+    + toString() : String
+    + toDot() : String
+    {static} + main(args:String[]) : void
+  }
+
+  class Bag<T>
+  class Stack<T>
+  class In
+  class StdOut
+}
+
+package "java.util" #DDDDDD {
+  class NoSuchElementException
+}
+
+' ----------------- Dependências -----------------
+Graph ..> Bag : adjacency lists
+Graph ..> In : read input
+Graph ..> StdOut : print (main)
+Graph ..> Stack : copy order
+Graph ..> NoSuchElementException : throws
+
+note right of Graph
+  Repositório: masmangan/algs4
+  Pacote: edu.princeton.cs.algs4
+  Implementação usa listas de adjacência (Bag<Integer>[])\n  e validação de vértices; E++ em addEdge(v,w).
+end note
+
+legend left
+  A ..> B  : usa/depende
+endlegend
+
+@enduml
