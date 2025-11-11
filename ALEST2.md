@@ -49,6 +49,9 @@ Para executar um dos exemplos apresentados em aula:
 # Heap
 ## Heap
 java Heap < tiny.txt
+ % java MaxPQ < tinyPQ.txt
+% java MinPQ < tinyPQ.txt
+% java TopM 5 < tinyBatch.txt
 
 ## Huffman
 java Huffman - < abra.txt | java BinaryDump 60
@@ -157,9 +160,7 @@ java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.CC algs4-data/mediumG.t
 java -cp target/algs4-1.0.0.0.jar edu.princeton.cs.algs4.CC -Xss50m algs4-data/largeG.txt
 ```
 
-## Prim
 
-## Kruskal
 
 # Digraph
 
@@ -194,6 +195,11 @@ java FloydWarshall
 ```
 % java DijkstraSP tinyEWD.txt 0
 ```
+## Prim
+
+%  java PrimMST tinyEWG.txt
+
+## Kruskal
 
 ## Critical Path
 ```
