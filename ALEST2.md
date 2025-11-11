@@ -63,8 +63,14 @@ java TopM 5 < tinyBatch.txt
 ```
 
 ## Huffman
+```
 java Huffman - < abra.txt | java BinaryDump 60
+```
+# Union-find
 
+```
+java QuickUnionUF tinyUF.txt
+```
 ## Graph.java
 Exemplos indicados nos comentários de `Graph.java`:
 
