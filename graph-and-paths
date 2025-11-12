@@ -1,0 +1,92 @@
+@startuml
+!theme blueprint
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+
+package "edu.princeton.cs.algs4" {
+  class Graph {
+    - NEWLINE : String
+    - V : int
+    - E : int
+    - adj : Bag<Integer> []
+    + Graph(V:int)
+    + Graph(in: In)
+    + Graph(graph: Graph)
+    + V() : int
+    + E() : int
+    - validateVertex(v:int) : void
+    + addEdge(v:int, w:int) : void
+    + adj(v:int) : Iterable<Integer>
+    + degree(v:int) : int
+    + toString() : String
+    + toDot() : String
+    {static} + main(args:String[]) : void
+  }
+
+  class BreadthFirstPaths {
+    - marked : boolean []
+    - edgeTo : int []
+    - s : int
+    + BreadthFirstPaths(G:Graph, s:int)
+    - bfs(G:Graph, s:int) : void
+    + hasPathTo(v:int) : boolean
+    + pathTo(v:int) : Iterable<Integer>
+  }
+
+  class DepthFirstPaths {
+    - marked : boolean []
+    - edgeTo : int []
+    - s : int
+    + DepthFirstPaths(G:Graph, s:int)
+    - dfs(G:Graph, v:int) : void
+    + hasPathTo(v:int) : boolean
+    + pathTo(v:int) : Iterable<Integer>
+  }
+
+  class Bag<T>
+  class Stack<T>
+  class Queue<T>
+  class In
+  class StdOut
+}
+
+package "java.util" #DDDDDD {
+  class NoSuchElementException
+}
+
+' ----------------- Dependências -----------------
+Graph ..> Bag : adjacency lists
+Graph ..> In : read input
+Graph ..> StdOut : print (main)
+Graph ..> Stack : copy order
+Graph ..> NoSuchElementException : throws
+
+BreadthFirstPaths ..> Graph : traverses
+BreadthFirstPaths ..> Queue : frontier (FIFO)
+BreadthFirstPaths ..> Stack : reconstruct path
+BreadthFirstPaths ..> StdOut : print optional
+BreadthFirstPaths ..> NoSuchElementException : throws
+
+DepthFirstPaths ..> Graph : traverses
+DepthFirstPaths ..> Stack : recursion simulation
+DepthFirstPaths ..> StdOut : print optional
+DepthFirstPaths ..> NoSuchElementException : throws
+
+note right of Graph
+  Repositório: masmangan/algs4\nPacote: edu.princeton.cs.algs4\nUsa listas de adjacência (Bag<Integer>[]).\nValida vértices; E++ em addEdge(v,w).
+end note
+
+note right of BreadthFirstPaths
+  Implementa busca em largura (BFS).\nUsa Queue para fronteira e Stack para reconstrução.\nComplexidade: O(V + E)
+end note
+
+note right of DepthFirstPaths
+  Implementa busca em profundidade (DFS).\nUsa recursão (implícita) ou Stack (explícita).\nComplexidade: O(V + E)
+end note
+
+legend left
+  A ..> B  : usa/depende
+endlegend
+
+@enduml
