@@ -1,0 +1,155 @@
+@startuml
+!theme blueprint
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+
+package "edu.princeton.cs.algs4" {
+  ' ===============================
+  ' PRIORITY QUEUES / HEAP / HUFFMAN / UF
+  ' ===============================
+  class Heap {
+    {static} + sort(a: Comparable[]) : void
+  }
+
+  class MaxPQ<K extends Comparable<K>> {
+    - pq : K[]
+    - n : int
+    + MaxPQ()
+    + insert(x:K) : void
+    + max() : K
+    + delMax() : K
+    + isEmpty() : boolean
+    + size() : int
+  }
+
+  class MinPQ<K extends Comparable<K>> {
+    - pq : K[]
+    - n : int
+    + MinPQ()
+    + insert(x:K) : void
+    + min() : K
+    + delMin() : K
+    + isEmpty() : boolean
+    + size() : int
+  }
+
+  class IndexMinPQ<K extends Comparable<K>> {
+    - n : int
+    - pq : int[]
+    - qp : int[]
+    - keys : K[]
+    + IndexMinPQ(maxN:int)
+    + insert(i:int, key:K) : void
+    + changeKey(i:int, key:K) : void
+    + decreaseKey(i:int, key:K) : void
+    + contains(i:int) : boolean
+    + delMin() : int
+    + isEmpty() : boolean
+    + size() : int
+  }
+
+  class IndexMaxPQ<K extends Comparable<K>> {
+    - n : int
+    - pq : int[]
+    - qp : int[]
+    - keys : K[]
+    + IndexMaxPQ(maxN:int)
+    + insert(i:int, key:K) : void
+    + changeKey(i:int, key:K) : void
+    + increaseKey(i:int, key:K) : void
+    + contains(i:int) : boolean
+    + delMax() : int
+    + isEmpty() : boolean
+    + size() : int
+  }
+
+  class TopM {
+    {static} + main(args:String[]) : void
+  }
+
+  class Huffman {
+    {static} + compress() : void
+    {static} + expand() : void
+    - buildTrie(freq:int[]) : Node
+    - writeTrie(x:Node) : void
+    - readTrie() : Node
+    - buildCode(st:String[], x:Node, s:String) : void
+  }
+
+  class QuickUnionUF {
+    - id : int[]
+    - count : int
+    + QuickUnionUF(n:int)
+    + find(p:int) : int
+    + connected(p:int, q:int) : boolean
+    + union(p:int, q:int) : void
+    + count() : int
+  }
+}
+
+' ==== SUPORTES / UTILIDADES ====
+package "edu.princeton.cs.algs4 (utils)" #EEEEFF {
+  class StdIn
+  class StdOut
+  class BinaryStdIn
+  class BinaryStdOut
+}
+
+package "java.util" #DDDDDD {
+  interface Comparable<T>
+  class NoSuchElementException
+}
+
+' ===============================
+' DEPENDÊNCIAS
+' ===============================
+Heap ..> Comparable : compare
+
+MaxPQ ..> Comparable : keys comparable
+MaxPQ ..> NoSuchElementException : underflow
+
+MinPQ ..> Comparable : keys comparable
+MinPQ ..> NoSuchElementException : underflow
+
+IndexMinPQ ..> Comparable : keys comparable
+IndexMinPQ ..> NoSuchElementException : underflow
+
+IndexMaxPQ ..> Comparable : keys comparable
+IndexMaxPQ ..> NoSuchElementException : underflow
+
+TopM ..> MinPQ : keeps top M
+TopM ..> StdIn : read stream
+TopM ..> StdOut : print
+
+Huffman ..> MinPQ : build trie
+Huffman ..> BinaryStdIn : read bits
+Huffman ..> BinaryStdOut : write bits
+
+QuickUnionUF ..> StdIn : client main (opcional)
+QuickUnionUF ..> StdOut : client main (opcional)
+
+' ===============================
+' NOTAS
+' ===============================
+note right of Heap
+  Ordenação por heap in-place em array 0..n-1.\nComplexidade: O(n log n), memória O(1).
+end note
+
+note right of IndexMinPQ
+  Fila de prioridade indexada (min).\nSuporta decreaseKey/ changeKey em O(log n).\nÚtil em Dijkstra.
+end note
+
+note right of Huffman
+  Compressão sem perdas.\nConstrução de uma trie com MinPQ pelos pesos (frequências).\nLeitura/escrita bit a bit (BinaryStdIn/Out).
+end note
+
+note right of QuickUnionUF
+  União-busca (quick-union).\nCom compressão de caminho e/ou ponderação em variantes.\nAPIs: find/union/connected.
+end note
+
+legend left
+  A ..> B : usa/depende\nA <|-- B : herança (não usada aqui)
+endlegend
+
+@enduml
