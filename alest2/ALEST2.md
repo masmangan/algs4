@@ -40,7 +40,7 @@ Os arquivos de dados indicados no material e comentários estão na pasta `algs4
 
 # Modelos
 
-Para uma visão geral das classes utilizadas nos exemplos, consulte [Modelling.md](/Modelling.md).
+Para uma visão geral das classes utilizadas nos exemplos, consulte [Modelling.md](/alest2/Modelling.md).
 
 # Exemplos
 
