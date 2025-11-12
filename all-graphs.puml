@@ -171,7 +171,6 @@ package "edu.princeton.cs.algs4" {
   class Topological
   class DijkstraSP
   class FordFulkerson
-    class FordFulkerson
 }
 
 package "java.util" #DDDDDD {
