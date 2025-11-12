@@ -94,7 +94,9 @@ package "edu.princeton.cs.algs4 (utils)" #EEEEFF {
   class StdOut
   class BinaryStdIn
   class BinaryStdOut
+  class Transaction
 }
+
 
 package "java.util" #DDDDDD {
   interface Comparable<T>
@@ -104,7 +106,9 @@ package "java.util" #DDDDDD {
 ' ===============================
 ' DEPENDÊNCIAS
 ' ===============================
-Heap ..> Comparable : compare
+Heap ..> Comparable : compare (sorting only)
+' Note: PQs implement their own binary heap; they do not depend on Heap.
+
 
 MaxPQ ..> Comparable : keys comparable
 MaxPQ ..> NoSuchElementException : underflow
@@ -118,11 +122,13 @@ IndexMinPQ ..> NoSuchElementException : underflow
 IndexMaxPQ ..> Comparable : keys comparable
 IndexMaxPQ ..> NoSuchElementException : underflow
 
-TopM ..> MinPQ : keeps top M
+TopM ..> MinPQ : keeps top M (min-oriented)
+TopM ..> Stack : output in reverse
 TopM ..> StdIn : read stream
 TopM ..> StdOut : print
+TopM ..> Transaction : domain item
 
-Huffman ..> MinPQ : build trie
+Huffman ..> MinPQ : build trie (by freq)
 Huffman ..> BinaryStdIn : read bits
 Huffman ..> BinaryStdOut : write bits
 
