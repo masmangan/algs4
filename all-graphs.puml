@@ -1,0 +1,274 @@
+@startuml
+!theme blueprint
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+
+package "edu.princeton.cs.algs4" {
+  ' ===============================
+  ' MODELOS DE GRAFO (5 pedidos)
+  ' ===============================
+  class Graph {
+    - NEWLINE : String
+    - V : int
+    - E : int
+    - adj : Bag<Integer> []
+    + Graph(V:int)
+    + Graph(in: In)
+    + Graph(graph: Graph)
+    + V() : int
+    + E() : int
+    - validateVertex(v:int) : void
+    + addEdge(v:int, w:int) : void
+    + adj(v:int) : Iterable<Integer>
+    + degree(v:int) : int
+    + toString() : String
+    + toDot() : String
+  }
+
+  class Digraph {
+    - V : int
+    - E : int
+    - adj : Bag<Integer> []
+    + Digraph(V:int)
+    + Digraph(in: In)
+    + V() : int
+    + E() : int
+    + addEdge(v:int, w:int) : void
+    + adj(v:int) : Iterable<Integer>
+    + outdegree(v:int) : int
+    + indegree(v:int) : int
+    + reverse() : Digraph
+    + toString() : String
+  }
+
+  class EdgeWeightedDigraph {
+    - V : int
+    - E : int
+    - adj : Bag<DirectedEdge> []
+    + EdgeWeightedDigraph(V:int)
+    + EdgeWeightedDigraph(in: In)
+    + V() : int
+    + E() : int
+    + addEdge(e: DirectedEdge) : void
+    + adj(v:int) : Iterable<DirectedEdge>
+    + edges() : Iterable<DirectedEdge>
+    + toString() : String
+  }
+
+  class EdgeWeightedGraph {
+    - V : int
+    - E : int
+    - adj : Bag<Edge> []
+    + EdgeWeightedGraph(V:int)
+    + EdgeWeightedGraph(in: In)
+    + V() : int
+    + E() : int
+    + addEdge(e: Edge) : void
+    + adj(v:int) : Iterable<Edge>
+    + edges() : Iterable<Edge>
+    + toString() : String
+  }
+
+  class AdjMatrixEdgeWeightedDigraph {
+    - V : int
+    - E : int
+    - adj : double [][]  ' +INF quando não há aresta
+    + AdjMatrixEdgeWeightedDigraph(V:int)
+    + addEdge(v:int, w:int, weight:double) : void
+    + adj(v:int) : Iterable<Integer>
+    + V() : int
+    + E() : int
+    + toString() : String
+  }
+
+  class FlowNetwork {
+    - V : int
+    - E : int
+    - adj : Bag<FlowEdge> []
+    + FlowNetwork(V:int)
+    + FlowNetwork(in: In)
+    + addEdge(e: FlowEdge) : void
+    + adj(v:int) : Iterable<FlowEdge>
+    + edges() : Iterable<FlowEdge>
+    + V() : int
+    + E() : int
+    + toString() : String
+  }
+
+  ' ===============================
+  ' REPRESENTAÇÃO DE ARESTAS
+  ' ===============================
+  class Edge {
+    - v : int
+    - w : int
+    - weight : double
+    + either() : int
+    + other(x:int) : int
+    + weight() : double
+    + toString() : String
+  }
+
+  class DirectedEdge {
+    - v : int
+    - w : int
+    - weight : double
+    + DirectedEdge(v:int, w:int, weight:double)
+    + from() : int
+    + to() : int
+    + weight() : double
+    + toString() : String
+  }
+
+  class FlowEdge {
+    - v : int
+    - w : int
+    - capacity : double
+    - flow : double
+    + FlowEdge(v:int, w:int, capacity:double)
+    + from() : int
+    + to() : int
+    + other(x:int) : int
+    + capacity() : double
+    + flow() : double
+    + residualCapacityTo(x:int) : double
+    + addResidualFlowTo(x:int, delta:double) : void
+    + toString() : String
+  }
+
+  ' ===============================
+  ' ALGORITMOS RELACIONADOS (contexto)
+  ' ===============================
+  class BreadthFirstPaths {
+    - marked : boolean []
+    - edgeTo : int []
+    - s : int
+    + BreadthFirstPaths(G:Graph, s:int)
+    - bfs(G:Graph, s:int) : void
+    + hasPathTo(v:int) : boolean
+    + pathTo(v:int) : Iterable<Integer>
+  }
+
+  class DepthFirstPaths {
+    - marked : boolean []
+    - edgeTo : int []
+    - s : int
+    + DepthFirstPaths(G:Graph, s:int)
+    - dfs(G:Graph, v:int) : void
+    + hasPathTo(v:int) : boolean
+    + pathTo(v:int) : Iterable<Integer>
+  }
+
+  class DijkstraSP
+  class FloydWarshall
+  class PrimMST
+  class KruskalMST
+  class CPM
+  class Cycle
+  class CC
+  class BreadthFirstDirectedPaths
+  class DepthFirstDirectedPaths
+  class Topological
+  class DijkstraSP
+  class FordFulkerson
+    class FordFulkerson
+}
+
+package "java.util" #DDDDDD {
+  class NoSuchElementException
+}
+
+' ===============================
+' DEPENDÊNCIAS
+' ===============================
+' utilitários de coleção / E/S do algs4
+package "edu.princeton.cs.algs4 (utils)" #EEEEFF {
+  class Bag<T>
+  class Stack<T>
+  class Queue<T>
+  class In
+  class StdOut
+  class MinPQ<T>
+  class UF
+}
+
+' --- Graphs -> utils / edges ---
+Graph ..> Bag : adjacency lists
+Graph ..> In : read input
+Graph ..> StdOut : print
+Graph ..> Stack : copy order
+Graph ..> NoSuchElementException : throws
+
+Digraph ..> Bag : adjacency lists
+Digraph ..> In : read input
+Digraph ..> StdOut : print
+
+EdgeWeightedDigraph ..> Bag : adjacency lists
+EdgeWeightedDigraph ..> DirectedEdge : weighted edges (digraph)
+EdgeWeightedDigraph ..> In : read input
+EdgeWeightedDigraph ..> StdOut : print
+
+EdgeWeightedGraph ..> Bag : adjacency lists
+EdgeWeightedGraph ..> Edge : weighted edges (undirected)
+EdgeWeightedGraph ..> In : read input
+EdgeWeightedGraph ..> StdOut : print
+
+AdjMatrixEdgeWeightedDigraph ..> StdOut : print
+
+FlowNetwork ..> Bag : adjacency lists
+FlowNetwork ..> FlowEdge : flow edges
+FlowNetwork ..> In : read input
+FlowNetwork ..> StdOut : print
+
+' --- Algoritmos -> modelos ---
+BreadthFirstPaths ..> Graph : BFS
+DepthFirstPaths ..> Graph : DFS
+BreadthFirstDirectedPaths ..> Digraph : BFS (dir)
+DepthFirstDirectedPaths ..> Digraph : DFS (dir)
+Cycle ..> Graph : cycle detection
+CC ..> Graph : connected components
+Topological ..> Digraph : DAG order
+FloydWarshall ..> AdjMatrixEdgeWeightedDigraph : APSP
+DijkstraSP ..> EdgeWeightedDigraph : SSSP (>=0)
+PrimMST ..> EdgeWeightedGraph : MST
+KruskalMST ..> EdgeWeightedGraph : MST
+CPM ..> EdgeWeightedDigraph : scheduling (DAG)
+FordFulkerson ..> FlowNetwork : max-flow / min-cut
+
+' ===============================
+' NOTAS
+' ===============================
+note right of Graph
+  Não direcionado; sem pesos.\nConectividade, ciclos, componentes.
+end note
+
+note right of Digraph
+  Direcionado; sem pesos.\nTopoSort (em DAG), SCC, ordenações.
+end note
+
+note right of EdgeWeightedDigraph
+  Direcionado; com peso (listas).
+Dijkstra, CPM (em DAG), caminhos mínimos.
+end note
+
+note right of AdjMatrixEdgeWeightedDigraph
+  Direcionado; com peso (matriz).\nÚtil para grafos densos e testes.
+end note
+
+note right of FlowNetwork
+  Direcionado; com capacidade/fluxo.\nFord–Fulkerson, Edmonds–Karp.
+end note
+
+legend left
+  == Notação ==
+A ..> B  : usa/depende
+A <|-- B : herança
+A <|.. B : realização/implementa
+
+== Observações ==
+• MST (Prim, Kruskal) usam EdgeWeightedGraph (não direcionado, ponderado).
+• Floyd–Warshall aqui usa AdjMatrixEdgeWeightedDigraph (denso/matriz).
+• CPM modela DAG ponderado com tempos (EdgeWeightedDigraph).
+endlegend
+
+@enduml
