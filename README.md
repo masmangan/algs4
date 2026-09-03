@@ -1,4 +1,6 @@
 > [!TIP]
+> Alunos de Algoritmos e Estruturas de Dados I, consultem [ALEST1.md](/alest1/ALEST1.md).
+>
 > Alunos de Algoritmos e Estruturas de Dados II, consultem [ALEST2.md](/alest2/ALEST2.md).
 
 
